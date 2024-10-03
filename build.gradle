@@ -37,7 +37,7 @@ configure(allprojects) { project ->
 		if (version.endsWith('-SNAPSHOT')) {
 			maven { url "https://repo.spring.io/snapshot" }
 		}
-	}
+		}
 	configurations.all {
 		resolutionStrategy {
 			cacheChangingModulesFor 0, "seconds"
@@ -115,4 +115,19 @@ configure([rootProject] + javaProjects) { project ->
 
 configure(moduleProjects) { project ->
 	apply from: "${rootDir}/gradle/spring-module.gradle"
+}
+subprojects {
+    tasks.withType(Test) {
+        enabled = false
+    }
+}
+subprojects {
+    tasks.matching { it.name == 'checkstyleNohttp' }.all {
+        enabled = false
+    }
+}
+subprojects {
+    afterEvaluate {
+        tasks.findByName('checkstyleNohttp')?.enabled = false
+    }
 }

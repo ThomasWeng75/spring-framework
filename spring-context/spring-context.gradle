@@ -11,7 +11,7 @@ dependencies {
 	api(project(":spring-beans"))
 	api(project(":spring-core"))
 	api(project(":spring-expression"))
-	api("io.micrometer:micrometer-observation")
+	api("io.micrometer:micrometer-observation:1.10.0")
 	optional(project(":spring-instrument"))
 	optional("io.micrometer:context-propagation")
 	optional("io.projectreactor:reactor-core")

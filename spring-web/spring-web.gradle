@@ -6,7 +6,7 @@ apply plugin: "kotlinx-serialization"
 dependencies {
 	api(project(":spring-beans"))
 	api(project(":spring-core"))
-	api("io.micrometer:micrometer-observation")
+	api("io.micrometer:micrometer-observation:1.10.0")
 	compileOnly("io.projectreactor.tools:blockhound")
 	optional(project(":spring-aop"))
 	optional(project(":spring-context"))
