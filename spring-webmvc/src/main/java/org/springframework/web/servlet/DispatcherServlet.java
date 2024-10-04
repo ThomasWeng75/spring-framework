@@ -1046,6 +1046,7 @@ public class DispatcherServlet extends FrameworkServlet {
 	 */
 	@SuppressWarnings("deprecation")
 	protected void doDispatch(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		//RecursivePrinter.printObject(request);
 		HttpServletRequest processedRequest = request;
 		HandlerExecutionChain mappedHandler = null;
 		boolean multipartRequestParsed = false;
