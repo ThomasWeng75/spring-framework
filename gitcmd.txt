@@ -1,0 +1,28 @@
+git stash --include-untracked
+git config --system core.longpaths true
+
+git checkout tags/v6.0.6
+git checkout tags/v3.3.3
+
+gradlew compileJava
+
+git checkout main
+git pull origin main
+gradlew :spring-boot-project:demo:compileJava
+
+gradlew clean build -x test -x checkstyleNohttp
+gradlew :spring-boot-project:demo:compileJava -x test -x checkstyleNohttp
+
+git add --all
+git commit -m "firstworkingBootAndFramework"
+git tag "firstworkingframework"
+git tag "firstworkingboot"
+
+github user info
+iamthomasweng@yahoo.ca/k58q8sveyfwqg3t
+git remote set-url origin https://github.com/ThomasWeng75/spring-boot.git
+git push origin main --force
+This is to remember the password in git
+git config --global credential.helper wincred
+
+git remote set-url origin https://github.com/ThomasWeng75/spring-framework.git
